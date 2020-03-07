@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+body {
+    overflow-x: hidden;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgba(132, 189, 172, .3);
+    font-family: 'Raleway', sans-serif;
+}
+
+.target-area {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+input {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid rgba(0,0,0, .3);
+    padding: 5px 20px;
+    background-color: #fff;
+    font-family: 'Raleway', sans-serif;
+}
+
+#input-answer {
+    flex: 1 100%;
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'Raleway', sans-serif;
+}
