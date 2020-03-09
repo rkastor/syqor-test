@@ -26,8 +26,6 @@ var inner = document.querySelector('.inner');
             let cardWrap = document.createElement('div');
                 cardWrap.className = `${card.className}__wrapper`;
 
-            // console.log(itemArr);
-
             itemArr.forEach(elem => {
                 // console.log(elem);
                 
@@ -98,7 +96,7 @@ var inner = document.querySelector('.inner');
                         block.innerText = `#${item[elem]}`;
                     } else {
                         block.innerText = item[elem];
-                    } 
+                    }
                 }
 
 
@@ -112,8 +110,6 @@ var inner = document.querySelector('.inner');
             setTimeout(() => {
                 card.className = 'card card--loaded';
             }, i * 300);
-
-            console.log(card);
         })
     }
 })()
