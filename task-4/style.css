@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+a {
+    color: inherit;
+}
+
+body {
+    overflow-x: hidden;
+    padding: 15px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    min-height: 100vh;
+    background-color: rgba(132, 189, 172, .3);
+    font-family: 'Raleway', sans-serif;
+}
+
+input {
+    display: block;
+    padding: 5px 20px;
+    font-family: 'Raleway',
+    sans-serif;
+}
+
+.container {
+    max-width: 1280px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+
+.inner {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: start;
+            justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 80px 0;
+}
+
+.card {
+    display: block;
+    -webkit-box-flex: 0;
+            flex: 0 calc(100% / 3);
+    padding: 0 15px;
+    margin-bottom: 30px;
+    opacity: 0;
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+    visibility: hidden;
+    -webkit-transition: all .6s ease-in-out;
+    transition: all .6s ease-in-out;
+}
+
+.card--loaded {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+
+.card__wrapper {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.card__wrapper:hover {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+}
+
+.card__title,
+.card__sku {
+    color: rgba(0, 0, 0, .8);
+    margin-top: 5px;
+}
+
+.card__img {
+    width: 100%;
+    max-width: 250px;
+}
+
+.card__options-title {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.card__options-container {
+    padding: 10px 0 40px;
+    text-align: left;
+    color: rgba(0,0,0,.8);
+}
+
+.card__options-label::first-letter {
+    text-transform: capitalize;
+}
+
+.card__price {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 900;
+}
