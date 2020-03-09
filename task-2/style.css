@@ -61,8 +61,15 @@ input[type="submit"] {
     border: 1px solid transparent;
 }
 
-#input-answer {
+.input-answer {
     text-align: center;
     margin: 20px 0;
     font-family: 'Raleway', sans-serif;
+}
+
+.input-answer:nth-child(odd) {
+    color: red;
+}
+.input-answer:nth-child(even) {
+    color: green;
 }

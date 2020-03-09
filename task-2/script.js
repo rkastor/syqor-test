@@ -2,16 +2,19 @@ var input     = document.getElementById('input-field'),
     form      = document.getElementById('form'),
     setForm   = document.getElementById('set'),
     clearForm = document.getElementById('clear'),
+    submitBtn    = document.querySelectorAll('input[type="submit"]'),
     storage   = localStorage.getItem('num23');
 
 
 function validInput(elem) {
     if ((elem.value).length == 0) {
-        setForm.setAttribute("disabled", "disabled");
-        clearForm.setAttribute("disabled", "disabled");
+        submitBtn.forEach((item)=> {
+            item.setAttribute("disabled", "disabled");
+        })
     } else {
-        setForm.removeAttribute("disabled");
-        clearForm.removeAttribute("disabled");
+        submitBtn.forEach((item)=> {
+            item.removeAttribute("disabled", "disabled");
+        })
     }
 }
 
@@ -40,6 +43,13 @@ clearForm.addEventListener('click', function() {
         input.value = '';
         localStorage.removeItem('num23');
         validInput(input);
+        
+        let parag = document.querySelectorAll('.input-answer');
+        
+        parag.forEach((item)=> {
+            item.remove();
+        })
+
         console.log('Local storage is clear');
     }
 });
@@ -54,19 +64,13 @@ form.addEventListener('submit', function(e) {
 // displaying of paragraph
 function displayChar(value) {
 
-    if (typeof value !== 'undefined' && value !== '') {
-        var answer = document.getElementById('input-answer');
+    if (typeof value !== 'undefined' && value !== null) {
 
-        if (typeof answer == "null" || typeof answer == "undefined") {
-            var answer = document.createElement("p");
-            answer.setAttribute("id", "input-answer");
+        var answer = document.createElement("p");
+        answer.setAttribute("class", "input-answer");
 
-            form.after(answer);
-            answer.innerHTML = `<strong>${value}</strong>`;
-        } else {
-            answer.innerHTML = `<strong>${value}</strong>`;
-        }
-
+        form.after(answer);
+        answer.innerHTML = `<strong>${value}</strong>`;
 
         console.log(value);
     }
