@@ -98,7 +98,7 @@ var inner = document.querySelector('.inner');
                         block.innerText = `#${item[elem]}`;
                     } else {
                         block.innerText = item[elem];
-                    }
+                    } 
                 }
 
 
